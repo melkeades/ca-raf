@@ -1,0 +1,26 @@
+{
+    "sourceFile": "main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1706614629539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706617932967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,14 @@\n \r\n gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)\r\n const mq = gsap.matchMedia()\r\n \r\n-const lenis = new Lenis()\r\n-lenis.on('scroll', ScrollTrigger.update)\r\n-gsap.ticker.add((time) => {\r\n-  lenis.raf(time * 1000)\r\n-})\r\n-gsap.ticker.lagSmoothing(0)\r\n+// const lenis = new Lenis()\r\n+// lenis.on('scroll', ScrollTrigger.update)\r\n+// gsap.ticker.add((time) => {\r\n+//   lenis.raf(time * 1000)\r\n+// })\r\n+// gsap.ticker.lagSmoothing(0)\r\n \r\n switch (sel('.page-wrapper').getAttribute('data-page')) {\r\n   case 'home':\r\n     Home()\r\n"
+                },
+                {
+                    "date": 1706618112000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,17 +10,17 @@\n import Home from './home'\r\n \r\n import './style.styl'\r\n \r\n-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)\r\n+gsap.registerPlugin(ScrollTrigger)\r\n const mq = gsap.matchMedia()\r\n \r\n-// const lenis = new Lenis()\r\n-// lenis.on('scroll', ScrollTrigger.update)\r\n-// gsap.ticker.add((time) => {\r\n-//   lenis.raf(time * 1000)\r\n-// })\r\n-// gsap.ticker.lagSmoothing(0)\r\n+const lenis = new Lenis()\r\n+lenis.on('scroll', ScrollTrigger.update)\r\n+gsap.ticker.add((time) => {\r\n+  lenis.raf(time * 1000)\r\n+})\r\n+gsap.ticker.lagSmoothing(0)\r\n \r\n switch (sel('.page-wrapper').getAttribute('data-page')) {\r\n   case 'home':\r\n     Home()\r\n"
+                }
+            ],
+            "date": 1706614629539,
+            "name": "Commit-0",
+            "content": "import Splide from '@splidejs/splide'\r\nimport { AutoScroll } from '@splidejs/splide-extension-auto-scroll'\r\nimport { Intersection } from '@splidejs/splide-extension-intersection'\r\nimport '@splidejs/splide/css'\r\nimport Lenis from '@studio-freight/lenis'\r\nimport gsap from 'gsap'\r\nimport MotionPathPlugin from 'gsap/MotionPathPlugin'\r\nimport ScrollTrigger from 'gsap/ScrollTrigger'\r\nimport { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'\r\nimport Home from './home'\r\n\r\nimport './style.styl'\r\n\r\ngsap.registerPlugin(ScrollTrigger, MotionPathPlugin)\r\nconst mq = gsap.matchMedia()\r\n\r\nconst lenis = new Lenis()\r\nlenis.on('scroll', ScrollTrigger.update)\r\ngsap.ticker.add((time) => {\r\n  lenis.raf(time * 1000)\r\n})\r\ngsap.ticker.lagSmoothing(0)\r\n\r\n\r\nswitch (sel('.page-wrapper').getAttribute('data-page')) {\r\n  case 'home':\r\n    Home()\r\n    break\r\n  case 'use-case':\r\n    useCase()\r\n    break\r\n  case 'contact':\r\n    contact()\r\n    break\r\n  case 'legal':\r\n    legal()\r\n    break\r\n  case 'error':\r\n    error()\r\n    break\r\n  default:\r\n    console.log('unknown data-page')\r\n}\r\n\r\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "home.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1706614575133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706615707409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,14 @@\n \r\n import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit } from './utils'\r\n \r\n export default function home() {\r\n-  console.log('home.js')\r\n+//   console.log('home.js')\r\n+        mq.add('(min-width: 992px)', () => {\r\n+\r\n+  // TABS\r\n+  // fix tabs changing width due to the text weight change\r\n+  selAll('.tabs__tab').forEach((tab) => {\r\n+    const width = tab.getBoundingClientRect().width\r\n+    tab.style.width = width + 'px'\r\n+  })})\r\n }\r\n"
+                },
+                {
+                    "date": 1706615753273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,12 @@\n import { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit } from './utils'\r\n \r\n export default function home() {\r\n   //   console.log('home.js')\r\n-  mq.add('(min-width: 992px)', () => {\r\n+  mq.add('(min-width: 479px)', () => {\r\n     // TABS\r\n     // fix tabs changing width due to the text weight change\r\n-    selAll('.tabs__tab').forEach((tab) => {\r\n+    selAll('.features__tab').forEach((tab) => {\r\n       const width = tab.getBoundingClientRect().width\r\n       tab.style.width = width + 'px'\r\n     })\r\n   })\r\n"
+                }
+            ],
+            "date": 1706614575133,
+            "name": "Commit-0",
+            "content": "import gsap from 'gsap'\r\nimport Splide from '@splidejs/splide'\r\nimport '@splidejs/splide/css'\r\nimport { AutoScroll } from '@splidejs/splide-extension-auto-scroll'\r\nimport { Intersection } from '@splidejs/splide-extension-intersection'\r\n\r\nimport { sel, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit } from './utils'\r\n\r\nexport default function home() {\r\nconsole.log('home.js')\r\n\r\n\r\n}"
+        }
+    ]
+}
