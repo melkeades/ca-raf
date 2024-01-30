@@ -39,7 +39,7 @@ export default function home() {
     trigger: 'body',
     start: 'top top',
     end: vh(100) + ' top',
-    markers: true,
+    // markers: true,
     scrub: true,
   })
 
