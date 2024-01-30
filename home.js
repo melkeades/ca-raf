@@ -30,19 +30,6 @@ export default function home() {
   })
   heroSlider.mount({ Intersection })
 
-  const heroTl = gsap
-    .timeline({ defaults: { ease: 'none' } })
-    .to('.hero__box-2-st', { y: 80, rotateZ: 5 }, 0)
-    .to('.hero__box-1-st', { y: 160, x: 40, rotateZ: 10 }, 0)
-  ScrollTrigger.create({
-    animation: heroTl,
-    trigger: 'body',
-    start: 'top top',
-    end: vh(100) + ' top',
-    // markers: true,
-    scrub: true,
-  })
-
   addSplideClasses('logos__slider')
   const classPrefix = 'logos'
   addSplideClasses(classPrefix + '__slider')
@@ -194,6 +181,32 @@ export default function home() {
   testImgSlider.mount()
   connectSplideArrows(testSlider, 'testimonials')
   connectSplideBullets(testSlider, 'testimonials')
+
+  mq.add('(min-width: 991px)', () => {
+    const heroTl = gsap
+      .timeline({ defaults: { ease: 'none' } })
+      .to('.header__info', { y: -120 }, 0)
+      .to('.hero__box-2-st', { y: 80, rotateZ: 5 }, 0)
+      .to('.hero__box-1-st', { y: 160, x: 40, rotateZ: 10 }, 0)
+    ScrollTrigger.create({
+      animation: heroTl,
+      trigger: 'body',
+      start: 'top top',
+      end: vh(100) + ' top',
+      // markers: true,
+      scrub: true,
+    })
+  })
+  const faqBg$ = sel('.faq-blog__img-w')
+  // faqBg$.style.height = '200vh'
+  gsap.set(faqBg$, { height: '200vh', y: '-100vh' })
+  ScrollTrigger.create({
+    animation: gsap.to(faqBg$, { y: '50vh', ease: 'none' }),
+    trigger: '.faq-blog__bg',
+    start: 'top bottom',
+    end: 'bottom top',
+    scrub: true,
+  })
 
   mq.add('(min-width: 479px)', () => {
     // TABS

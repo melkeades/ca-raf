@@ -242,4 +242,3 @@ export function stRoInit() {
     }
   }).observe(document.body)
 }
-stRoInit()
