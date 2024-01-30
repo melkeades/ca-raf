@@ -6,7 +6,7 @@ import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
 
-import { sel, selAll, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit, mq } from './utils'
+import { sel, selAll, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit, mq, vh } from './utils'
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
 
@@ -28,8 +28,20 @@ export default function home() {
       },
     },
   })
-  // heroSlider.mount({ AutoScroll })
   heroSlider.mount({ Intersection })
+
+  const heroTl = gsap
+    .timeline({ defaults: { ease: 'none' } })
+    .to('.hero__box-2-st', { y: 80, rotateZ: 5 }, 0)
+    .to('.hero__box-1-st', { y: 160, x: 40, rotateZ: 10 }, 0)
+  ScrollTrigger.create({
+    animation: heroTl,
+    trigger: 'body',
+    start: 'top top',
+    end: vh(100) + ' top',
+    markers: true,
+    scrub: true,
+  })
 
   addSplideClasses('logos__slider')
   const classPrefix = 'logos'
@@ -78,7 +90,7 @@ export default function home() {
     .to(
       propsPlane$,
       {
-        duration: 5,
+        duration: 3,
         ease: 'power1.inOut',
         immediateRender: true,
         motionPath: {

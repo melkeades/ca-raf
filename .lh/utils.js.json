@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1706615874175,
@@ -20,6 +20,10 @@
                 {
                     "date": 1706627608832,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,11 @@\n export const vh = (percent) => window.innerHeight * (percent / 100)\r\n export const vw = (percent) => window.innerWidth * (percent / 100)\r\n \r\n export const mq = gsap.matchMedia()\r\n-export const isDomEl = (el) => el instanceof Document || el instanceof Element\r\n+const isDomEl = (el) => el instanceof Document || el instanceof Element\r\n \r\n+\r\n // export function debounce(func, time = 100) {\r\n //   let timer = 0\r\n //   return function (event) {\r\n //     if (timer) clearTimeout(timer)\r\n@@ -52,10 +53,15 @@\n   list.classList.remove('splide__list')\r\n   slide.forEach((slide) => slide.classList.remove('splide__slide'))\r\n }\r\n export function addSplideClasses(slider) {\r\n-  const splide = document.querySelector('.' + slider)\r\n-  const track = splide.children[0]\r\n+  let splide\r\n+  if (typeof slider === 'string') {\r\n+    splide = document.querySelector('.' + slider)\r\n+  } else if (isDomEl(slider)) {\r\n+    splide = slider\r\n+  }\r\n+  const track = splide.querySelector('.w-dyn-list')\r\n   const list = track.children[0]\r\n   const slide = list.childNodes\r\n   splide.classList.add('splide')\r\n   track.classList.add('splide__track')\r\n@@ -213,19 +219,13 @@\n     delay: 0.0,\r\n   })\r\n }\r\n \r\n-export function addSplideClasses(slider) {\r\n-  let splide\r\n-  if (typeof slider === 'string') {\r\n-    splide = document.querySelector('.' + slider)\r\n-  } else if (isDomEl(slider)) {\r\n-    splide = slider\r\n-  }\r\n-  const track = splide.querySelector('.w-dyn-list')\r\n-  const list = track.children[0]\r\n+export function addSwiperClasses(slider) {\r\n+  const swiper = document.querySelector('.' + slider)\r\n+  const list = swiper.children[0]\r\n   const slide = list.childNodes\r\n-  splide.classList.add('splide')\r\n-  track.classList.add('splide__track')\r\n-  list.classList.add('splide__list')\r\n-  slide.forEach((slide) => slide.classList.add('splide__slide'))\r\n+  swiper.classList.add('swiper')\r\n+  list.classList.add('swiper-wrapper')\r\n+  slide.forEach((slide) => slide.classList.add('swiper-slide'))\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1706636101370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,8 +178,12 @@\n \r\n import gsap from 'gsap'\r\n import { ScrollTrigger } from 'gsap/ScrollTrigger'\r\n \r\n+/**\r\n+ * Returns the sum of all numbers passed to the function.\r\n+ * @param {'top'|'middle'|'bottom'} topMiddleBottom A positive or negative number\r\n+ */\r\n export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', fromToType = '', topMiddleBottom = '', markers = false) {\r\n   const tlType = fromToType === '' ? 'fromTo' : fromToType\r\n   const stPosition = topMiddleBottom === '' ? 'middle' : topMiddleBottom\r\n   // negative distance = front object (faster on scroll), positive distance = back object (slower on scroll/more sticky)\r\n"
                 }
             ],
             "date": 1706615874175,

@@ -179,6 +179,9 @@ export function addObserver(element, className, callback) {
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+/**
+ * @param {'top'|'bottom'} topMiddleBottom
+ */
 export function scrollTriggerInit(distance = 0, elClassName = '', sectionClassName = '', fromToType = '', topMiddleBottom = '', markers = false) {
   const tlType = fromToType === '' ? 'fromTo' : fromToType
   const stPosition = topMiddleBottom === '' ? 'middle' : topMiddleBottom
@@ -227,3 +230,16 @@ export function addSwiperClasses(slider) {
   list.classList.add('swiper-wrapper')
   slide.forEach((slide) => slide.classList.add('swiper-slide'))
 }
+
+export function stRoInit() {
+  let documentHeight = document.body.clientHeight
+  new ResizeObserver((entries) => {
+    const newHeight = entries[0].contentRect.height // only one item [0] - body
+    if (newHeight !== documentHeight) {
+      documentHeight = newHeight
+      ScrollTrigger.refresh()
+      console.log('observer')
+    }
+  }).observe(document.body)
+}
+stRoInit()
