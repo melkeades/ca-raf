@@ -19,7 +19,7 @@ export default function home() {
     rewind: true,
     // autoplay: 'pause',
     autoplay: true,
-    interval: 5000,
+    interval: 3000,
     speed: 1500,
   })
   // heroSlider.mount({ Intersection })
