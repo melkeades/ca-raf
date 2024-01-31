@@ -17,18 +17,13 @@ export default function home() {
     pagination: false,
     type: 'fade',
     rewind: true,
-    autoplay: 'pause',
+    // autoplay: 'pause',
+    autoplay: true,
+    interval: 5000,
     speed: 1500,
-    intersection: {
-      inView: {
-        autoplay: true,
-      },
-      outView: {
-        autoplay: false,
-      },
-    },
   })
-  heroSlider.mount({ Intersection })
+  // heroSlider.mount({ Intersection })
+  heroSlider.mount()
 
   addSplideClasses('logos__slider')
   const classPrefix = 'logos'
