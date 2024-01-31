@@ -86,7 +86,7 @@ export default function home() {
           alignOrigin: [0.5, 0.5],
           autoRotate: 90,
           start: 1,
-          end: 0.2,
+          end: 0.25,
         },
       },
       0
@@ -199,7 +199,7 @@ export default function home() {
   })
   const faqBg$ = sel('.faq-blog__img-w')
   // faqBg$.style.height = '200vh'
-  gsap.set(faqBg$, { height: '200vh', y: '-100vh' })
+  gsap.set(faqBg$, { height: '300vh', y: '-100vh' })
   ScrollTrigger.create({
     animation: gsap.to(faqBg$, { y: '50vh', ease: 'none' }),
     trigger: '.faq-blog__bg',
