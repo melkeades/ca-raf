@@ -6,7 +6,7 @@ import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { debounce, onDomReady, scrollTriggerInit, sel, vh } from './utils'
+import { debounce, onDomReady, scrollTriggerInit, sel, vh, addSplideClasses, connectSplideArrows, connectSplideBullets } from './utils'
 import Home from './home'
 
 import './style.styl'
@@ -21,22 +21,70 @@ gsap.ticker.add((time) => {
 })
 gsap.ticker.lagSmoothing(0)
 
-switch (sel('.page-wrapper').getAttribute('data-page')) {
+const currentPage = sel('.page-wrapper').getAttribute('data-page')
+switch (currentPage) {
   case 'home':
     Home()
     break
+  case 'partners':
+    // Partners()
+    break
   case 'use-case':
-    useCase()
+    // useCase()
     break
   case 'contact':
-    contact()
+    // contact()
     break
   case 'legal':
-    legal()
+    // legal()
     break
   case 'error':
-    error()
+    // error()
     break
   default:
-    console.log('unknown data-page')
+    console.log('unknown data-page:', currentPage)
+}
+
+const testInfoSlider$ = sel('.testimonials__info-slider')
+if (testInfoSlider$) {
+  addSplideClasses(testInfoSlider$)
+  const testSlider = new Splide(testInfoSlider$, {
+    arrows: false,
+    pagination: false,
+    gap: '2rem',
+    type: 'loop',
+    perPage: 1,
+    speed: 1500,
+    interval: 5000,
+    easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+    autoplay: 'pause',
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
+    breakpoints: {
+      747: {
+        autoplay: false,
+      },
+    },
+  })
+  const testImgSlider$ = sel('.testimonials__img-slider')
+  addSplideClasses(testImgSlider$)
+  const testImgSlider = new Splide(testImgSlider$, {
+    type: 'fade',
+    rewind: true, // to make it "loop" with the type fade
+    arrows: false,
+    pagination: false,
+    perPage: 1,
+    speed: 1000,
+  })
+  testImgSlider.sync(testSlider)
+  testSlider.mount({ Intersection })
+  testImgSlider.mount()
+  connectSplideArrows(testSlider, 'testimonials')
+  connectSplideBullets(testSlider, 'testimonials')
 }

@@ -6,7 +6,7 @@ import '@splidejs/splide/css'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
 
-import { sel, selAll, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit, mq, vh } from './utils'
+import { sel, selAll, addSplideClasses, onDomReady, connectSplideArrows, connectSplideBullets, splideAutoWidth, scrollTriggerInit, mq, vh, l } from './utils'
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
 
@@ -134,48 +134,6 @@ export default function home() {
   sel('#blog-prev-new').onpointerdown = () => {
     sel('#blog-prev').click()
   }
-  const testInfoSlider$ = sel('.testimonials__info-slider')
-  addSplideClasses(testInfoSlider$)
-  const testSlider = new Splide(testInfoSlider$, {
-    arrows: false,
-    pagination: false,
-    gap: '2rem',
-    type: 'loop',
-    perPage: 1,
-    speed: 1500,
-    interval: 5000,
-    easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-    autoplay: 'pause',
-    intersection: {
-      inView: {
-        autoplay: true,
-      },
-      outView: {
-        autoplay: false,
-      },
-    },
-    breakpoints: {
-      747: {
-        autoplay: false,
-      },
-    },
-  })
-  const testImgSlider$ = sel('.testimonials__img-slider')
-  addSplideClasses(testImgSlider$)
-  const testImgSlider = new Splide(testImgSlider$, {
-    type: 'fade',
-    rewind: true, // to make it "loop" with the type fade
-    arrows: false,
-    pagination: false,
-    perPage: 1,
-    speed: 1000,
-    // autoWidth: true,
-  })
-  testImgSlider.sync(testSlider)
-  testSlider.mount({ Intersection })
-  testImgSlider.mount()
-  connectSplideArrows(testSlider, 'testimonials')
-  connectSplideBullets(testSlider, 'testimonials')
 
   const faqBg$ = sel('.faq-blog__img-w')
   // faqBg$.style.height = '200vh'

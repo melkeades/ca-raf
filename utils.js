@@ -2,7 +2,7 @@ export const sel = (e) => document.querySelector(e)
 export const selAll = (e) => document.querySelectorAll(e)
 export const vh = (percent) => window.innerHeight * (percent / 100)
 export const vw = (percent) => window.innerWidth * (percent / 100)
-
+export const l = (...e) => console.log(...e)
 export const mq = gsap.matchMedia()
 const isDomEl = (el) => el instanceof Document || el instanceof Element
 
@@ -119,11 +119,14 @@ export function splideAutoWidth(splide) {
   let sliderOverflow = true
   let sliderReady = false
   // to center inactive/small slider
-  splide.on('resized', function () {
+  splide.on('resized ', function () {
     var isOverflow = Components.Layout.isOverflow()
     sliderOverflow = isOverflow
+    l(sliderOverflow)
+
     var list = Components.Elements.list
     var lastSlide = Components.Slides.getAt(splide.length - 1)
+    // l(lastSlide, Object.keys(lastSlide).length === 0)/
 
     if (lastSlide) {
       // Toggles `justify-content: center`
@@ -231,7 +234,7 @@ export function addSwiperClasses(slider) {
   slide.forEach((slide) => slide.classList.add('swiper-slide'))
 }
 
-export function stRoInit() {
+export function stResizeObserverInit() {
   let documentHeight = document.body.clientHeight
   new ResizeObserver((entries) => {
     const newHeight = entries[0].contentRect.height // only one item [0] - body
