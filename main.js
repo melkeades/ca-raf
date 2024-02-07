@@ -8,6 +8,9 @@ import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { debounce, onDomReady, scrollTriggerInit, sel, vh, addSplideClasses, connectSplideArrows, connectSplideBullets } from './utils'
 import Home from './home'
+import Story from './story'
+import Partners from './partners'
+import Contact from './contact'
 
 import './style.styl'
 
@@ -21,30 +24,7 @@ gsap.ticker.add((time) => {
 })
 gsap.ticker.lagSmoothing(0)
 
-const currentPage = sel('.page-wrapper').getAttribute('data-page')
-switch (currentPage) {
-  case 'home':
-    Home()
-    break
-  case 'partners':
-    // Partners()
-    break
-  case 'use-case':
-    // useCase()
-    break
-  case 'contact':
-    // contact()
-    break
-  case 'legal':
-    // legal()
-    break
-  case 'error':
-    // error()
-    break
-  default:
-    console.log('unknown data-page:', currentPage)
-}
-
+// testimonials slider
 const testInfoSlider$ = sel('.testimonials__info-slider')
 if (testInfoSlider$) {
   addSplideClasses(testInfoSlider$)
@@ -87,4 +67,52 @@ if (testInfoSlider$) {
   testImgSlider.mount()
   connectSplideArrows(testSlider, 'testimonials')
   connectSplideBullets(testSlider, 'testimonials')
+}
+
+// generic parallax section
+const parallaxSec$ = sel('.title-sec')
+if (parallaxSec$) {
+  const img$ = parallaxSec$.querySelector('img')
+  img$.style.height = '200%'
+  gsap.to(img$, {
+    y: '50%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: parallaxSec$,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+}
+
+try {
+  const currentPage = sel('.page-wrapper').getAttribute('data-page')
+  switch (currentPage) {
+    case 'home':
+      Home()
+      break
+    case 'partners':
+      Partners()
+      break
+    case 'use-case':
+      // useCase()
+      break
+    case 'story':
+      Story()
+      break
+    case 'contact':
+      Contact()
+      break
+    case 'legal':
+      // legal()
+      break
+    case 'error':
+      // error()
+      break
+    default:
+      console.log('unknown data-page:', currentPage)
+  }
+} catch (e) {
+  console.warn('%cError:\n', 'font-size: 1.5rem; color: salmon;', e)
 }

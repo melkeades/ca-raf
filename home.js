@@ -46,6 +46,9 @@ export default function home() {
 
   //   console.log('home.js')
   const cards$ = [...selAll('.props__card')]
+  cards$.forEach((card) => {
+    card.style.transition = 'unset'
+  })
   const propsDots$ = sel('.props__line-w')
   const propsPlane$ = sel('.props__plane-w')
   // const cards$ = gsap.utils.toArray('.props__card')
@@ -61,9 +64,9 @@ export default function home() {
       {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 2,
         ease: 'expo.out',
-        stagger: 0.2,
+        stagger: { each: 0.3 },
       },
       0
     )

@@ -122,7 +122,7 @@ export function splideAutoWidth(splide) {
   splide.on('resized ', function () {
     var isOverflow = Components.Layout.isOverflow()
     sliderOverflow = isOverflow
-    l(sliderOverflow)
+    // l(sliderOverflow)
 
     var list = Components.Elements.list
     var lastSlide = Components.Slides.getAt(splide.length - 1)

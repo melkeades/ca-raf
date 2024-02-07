@@ -1,0 +1,50 @@
+{
+    "sourceFile": "story.styl",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1707240602212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707240610695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n figure\r\n     div\r\n         border var(--space--1)\r\n-        overflow: hidden\n\\ No newline at end of file\n+        overflow: hidden\r\n+        opacity .5\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707240632374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+figure\r\n+    div\r\n+        border-radius:  var(--space--1)\r\n+        overflow: hidden\r\n+        opacity .5\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707240657119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+figure\r\n+    div\r\n+        border-radius:  var(--space--0-5)\r\n+        overflow: hidden\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707241041748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,5 @@\n+.text-rich-text\r\n+    figure\r\n+        div\r\n+            border-radius:  var(--space--0-5)\r\n+            overflow: hidden\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707241092742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+.text-rich-text\r\n+    figure\r\n+        div\r\n+            border-radius:  var(--space--0-5)\r\n+            overflow: hidden\r\n+    ul, ol\r\n+        li::marker\r\n+            color: var(--color-prime)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707241100213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+.text-rich-text\r\n+    figure\r\n+        div\r\n+            border-radius:  var(--space--0-5)\r\n+            overflow: hidden\r\n+    ul, ol\r\n+        li::marker\r\n+            color: var(--color--prime)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707241205394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+.text-rich-text\r\n+    figure\r\n+        div\r\n+            border-radius:  var(--space--0-5)\r\n+            overflow: hidden\r\n+    ul, ol\r\n+        li::marker\r\n+            color: var(--colors--prime)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1707241282219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+// .text-rich-text\r\n+//     figure\r\n+//         div\r\n+//             border-radius:  var(--space--0-5)\r\n+//             overflow: hidden\r\n+//     ul, ol\r\n+//         li::marker\r\n+//             color: var(--colors--prime)\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1707240602212,
+            "name": "Commit-0",
+            "content": "figure\r\n    div\r\n        border var(--space--1)\r\n        overflow: hidden"
+        }
+    ]
+}

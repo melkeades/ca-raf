@@ -1,0 +1,42 @@
+{
+    "sourceFile": "contact.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1707281396389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707281403262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import gsap from 'gsap'\r\n import { sel, selAll } from './utils'\r\n import { ScrollTrigger } from 'gsap/all'\r\n \r\n-export default function Partners() {\r\n+export default function Contact() {\r\n   const partnersList$ = sel('.all-partners__list')\r\n   const partnersItems$ = [...selAll('.partners__item')]\r\n   partnersItems$.forEach((item, i) => {\r\n     item.style.transition = 'unset'\r\n"
+                },
+                {
+                    "date": 1707282766975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n import { sel, selAll } from './utils'\r\n import { ScrollTrigger } from 'gsap/all'\r\n \r\n export default function Contact() {\r\n-  const partnersList$ = sel('.all-partners__list')\r\n-  const partnersItems$ = [...selAll('.partners__item')]\r\n+  const partnersList$ = sel('.contact-info__list')\r\n+  const partnersItems$ = [...selAll('.contact-info__item')]\r\n   partnersItems$.forEach((item, i) => {\r\n     item.style.transition = 'unset'\r\n   })\r\n \r\n"
+                },
+                {
+                    "date": 1707282779511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     item.style.transition = 'unset'\r\n   })\r\n \r\n   gsap.from(partnersItems$, {\r\n-    x: -30,\r\n+    y: 30,\r\n     opacity: 0,\r\n     duration: 1.5,\r\n     ease: 'expo.out',\r\n     // delay: 0.5,\r\n"
+                },
+                {
+                    "date": 1707282912792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     item.style.transition = 'unset'\r\n   })\r\n \r\n   gsap.from(partnersItems$, {\r\n-    y: 30,\r\n+    y: 60,\r\n     opacity: 0,\r\n     duration: 1.5,\r\n     ease: 'expo.out',\r\n     // delay: 0.5,\r\n"
+                },
+                {
+                    "date": 1707282918873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     ease: 'expo.out',\r\n     // delay: 0.5,\r\n     //   stagger: 0.2,\r\n     stagger: {\r\n-      each: 0.1,\r\n+      each: 0.2,\r\n     },\r\n     scrollTrigger: {\r\n       trigger: partnersList$,\r\n       start: 'top 75%',\r\n"
+                },
+                {
+                    "date": 1707282925910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,16 +9,16 @@\n     item.style.transition = 'unset'\r\n   })\r\n \r\n   gsap.from(partnersItems$, {\r\n-    y: 60,\r\n+    y: 50,\r\n     opacity: 0,\r\n     duration: 1.5,\r\n     ease: 'expo.out',\r\n     // delay: 0.5,\r\n     //   stagger: 0.2,\r\n     stagger: {\r\n-      each: 0.2,\r\n+      each: 0.15,\r\n     },\r\n     scrollTrigger: {\r\n       trigger: partnersList$,\r\n       start: 'top 75%',\r\n"
+                }
+            ],
+            "date": 1707281396389,
+            "name": "Commit-0",
+            "content": "import gsap from 'gsap'\r\nimport { sel, selAll } from './utils'\r\nimport { ScrollTrigger } from 'gsap/all'\r\n\r\nexport default function Partners() {\r\n  const partnersList$ = sel('.all-partners__list')\r\n  const partnersItems$ = [...selAll('.partners__item')]\r\n  partnersItems$.forEach((item, i) => {\r\n    item.style.transition = 'unset'\r\n  })\r\n\r\n  gsap.from(partnersItems$, {\r\n    x: -30,\r\n    opacity: 0,\r\n    duration: 1.5,\r\n    ease: 'expo.out',\r\n    // delay: 0.5,\r\n    //   stagger: 0.2,\r\n    stagger: {\r\n      each: 0.1,\r\n    },\r\n    scrollTrigger: {\r\n      trigger: partnersList$,\r\n      start: 'top 75%',\r\n    },\r\n  })\r\n}\r\n"
+        }
+    ]
+}
