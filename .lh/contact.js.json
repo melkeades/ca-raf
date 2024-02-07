@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1707281396389,
@@ -32,6 +32,10 @@
                 {
                     "date": 1707282925910,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,16 +9,16 @@\n     item.style.transition = 'unset'\r\n   })\r\n \r\n   gsap.from(partnersItems$, {\r\n-    y: 60,\r\n+    y: 50,\r\n     opacity: 0,\r\n     duration: 1.5,\r\n     ease: 'expo.out',\r\n     // delay: 0.5,\r\n     //   stagger: 0.2,\r\n     stagger: {\r\n-      each: 0.2,\r\n+      each: 0.15,\r\n     },\r\n     scrollTrigger: {\r\n       trigger: partnersList$,\r\n       start: 'top 75%',\r\n"
+                },
+                {
+                    "date": 1707317258817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import gsap from 'gsap'\r\n import { sel, selAll } from './utils'\r\n-import { ScrollTrigger } from 'gsap/all'\r\n \r\n export default function Contact() {\r\n   const partnersList$ = sel('.contact-info__list')\r\n   const partnersItems$ = [...selAll('.contact-info__item')]\r\n"
                 }
             ],
             "date": 1707281396389,

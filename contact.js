@@ -1,6 +1,5 @@
 import gsap from 'gsap'
 import { sel, selAll } from './utils'
-import { ScrollTrigger } from 'gsap/all'
 
 export default function Contact() {
   const partnersList$ = sel('.contact-info__list')

@@ -45,10 +45,8 @@ export default function home() {
   slider.mount({ AutoScroll })
 
   //   console.log('home.js')
-  const cards$ = [...selAll('.props__card')]
-  cards$.forEach((card) => {
-    card.style.transition = 'unset'
-  })
+  const cards$ = [...selAll('.props__card-st')]
+  // cards$.forEach((card) => { card.style.transition = 'unset' })
   const propsDots$ = sel('.props__line-w')
   const propsPlane$ = sel('.props__plane-w')
   // const cards$ = gsap.utils.toArray('.props__card')

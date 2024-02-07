@@ -1,3 +1,5 @@
+import './style.styl'
+
 import Splide from '@splidejs/splide'
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll'
 import { Intersection } from '@splidejs/splide-extension-intersection'
@@ -11,8 +13,7 @@ import Home from './home'
 import Story from './story'
 import Partners from './partners'
 import Contact from './contact'
-
-import './style.styl'
+import Solutions from './solutions'
 
 // gsap.registerPlugin(ScrollTrigger)
 const mq = gsap.matchMedia()
@@ -103,6 +104,9 @@ try {
       break
     case 'contact':
       Contact()
+      break
+    case 'solutions':
+      Solutions()
       break
     case 'legal':
       // legal()

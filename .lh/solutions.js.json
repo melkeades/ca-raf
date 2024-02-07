@@ -1,0 +1,30 @@
+{
+    "sourceFile": "solutions.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1707317274701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1707317445184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import gsap from 'gsap'\r\n import { sel, selAll } from './utils'\r\n \r\n-export default function Contact() {\r\n-  const partnersList$ = sel('.contact-info__list')\r\n-  const partnersItems$ = [...selAll('.contact-info__item')]\r\n+export default function Solutions() {\r\n+  const propList$ = sel('.props-ico__list')\r\n+  const propItems$ = [...selAll('.props-ico__item')]\r\n   partnersItems$.forEach((item, i) => {\r\n     item.style.transition = 'unset'\r\n   })\r\n \r\n-  gsap.from(partnersItems$, {\r\n+  gsap.from(propItems$, {\r\n     y: 50,\r\n     opacity: 0,\r\n     duration: 1.5,\r\n     ease: 'expo.out',\r\n@@ -18,9 +18,9 @@\n     stagger: {\r\n       each: 0.15,\r\n     },\r\n     scrollTrigger: {\r\n-      trigger: partnersList$,\r\n+      trigger: propList$,\r\n       start: 'top 75%',\r\n     },\r\n   })\r\n }\r\n"
+                },
+                {
+                    "date": 1707317627389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n export default function Solutions() {\r\n   const propList$ = sel('.props-ico__list')\r\n   const propItems$ = [...selAll('.props-ico__item')]\r\n-  partnersItems$.forEach((item, i) => {\r\n+  propItems$.forEach((item, i) => {\r\n     item.style.transition = 'unset'\r\n   })\r\n \r\n   gsap.from(propItems$, {\r\n"
+                },
+                {
+                    "date": 1707318822205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,8 @@\n     y: 50,\r\n     opacity: 0,\r\n     duration: 1.5,\r\n     ease: 'expo.out',\r\n-    // delay: 0.5,\r\n-    //   stagger: 0.2,\r\n     stagger: {\r\n       each: 0.15,\r\n     },\r\n     scrollTrigger: {\r\n"
+                }
+            ],
+            "date": 1707317274701,
+            "name": "Commit-0",
+            "content": "import gsap from 'gsap'\r\nimport { sel, selAll } from './utils'\r\n\r\nexport default function Contact() {\r\n  const partnersList$ = sel('.contact-info__list')\r\n  const partnersItems$ = [...selAll('.contact-info__item')]\r\n  partnersItems$.forEach((item, i) => {\r\n    item.style.transition = 'unset'\r\n  })\r\n\r\n  gsap.from(partnersItems$, {\r\n    y: 50,\r\n    opacity: 0,\r\n    duration: 1.5,\r\n    ease: 'expo.out',\r\n    // delay: 0.5,\r\n    //   stagger: 0.2,\r\n    stagger: {\r\n      each: 0.15,\r\n    },\r\n    scrollTrigger: {\r\n      trigger: partnersList$,\r\n      start: 'top 75%',\r\n    },\r\n  })\r\n}\r\n"
+        }
+    ]
+}
